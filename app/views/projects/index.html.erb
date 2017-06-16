@@ -1,0 +1,15 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <% @projects.each do |project| %>
+                        <h2 class="post-title">
+                            <%= link_to project.title ,project %>
+                        </h2>
+                    <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
+					<br>
+					<br>
+					<% end %>
+                </div>
+                <hr>

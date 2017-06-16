@@ -1,0 +1,42 @@
+
+<header>
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+
+<p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
+<h1 align="center">
+<%= @post.title %>
+</h1>
+<hr>
+<br>
+<div id="content">
+<h2 align="center">
+<%= @post.content %>
+</h2>
+</div>
+<% if user_signed_in? %>
+<div id="admin_links">
+<br>
+<hr>
+<%=link_to "EDIT ARTICLE", edit_post_path(@post) %>
+<br>
+<hr>
+</div>
+<% end %>
+
+<br>
+<br>
+<h2 align="center">
+<%= link_to "Edit", edit_post_path(@post) %>
+</h2>
+<br>
+<br>
+<br>
+<br>
+<%= render 'disqus' %>
+</div>
+<br>
+<br>
+</header>
+
+
+<%= javascript_include_tag "applications" %>

@@ -1,0 +1,2 @@
+class BloggerController < ApplicationController
+end
